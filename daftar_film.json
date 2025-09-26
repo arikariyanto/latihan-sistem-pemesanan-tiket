@@ -1,0 +1,14 @@
+{
+    "A001": {
+        "judul": "Avengers: Endgame",
+        "harga": 50000
+    },
+    "A002": {
+        "judul": "Spiderman: No Way Home",
+        "harga": 45000
+    },
+    "A003": {
+        "judul": "Batman: Dark Knight",
+        "harga": 40000
+    }
+}

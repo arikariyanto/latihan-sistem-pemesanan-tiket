@@ -7,11 +7,12 @@ while True:
     print("\n=== MENU BIOSKOP ===")
     print("1. Lihat Daftar Film")
     print("2. Tambah Film Baru")
-    print("3. Pesan Tiket")
-    print("4. Riwayat Pemesanan")
-    print("5. Urutkan Harga Film (Bubble Sort)")
-    print("6. Cari Film (Linear Search)")
-    print("7. Keluar")
+    print("3. Hapus Film")    
+    print("4. Pesan Tiket")
+    print("5. Riwayat Pemesanan")
+    print("6. Urutkan Harga Film (Bubble Sort)")
+    print("7. Cari Film (Linear Search)")
+    print("8. Keluar")
 
     pilihan = input("Pilih menu: ")
 
@@ -26,22 +27,26 @@ while True:
         print("✅ Film berhasil ditambahkan!")
 
     elif pilihan == "3":
+        kode = input("Masukkan kode film yang ingin dihapus: ")
+        modul_film.hapus_film(kode)
+
+    elif pilihan == "4":
         modul_film.tampilkan_film()
         kode = input("Masukkan kode film: ")
         jumlah = int(input("Jumlah tiket: "))
         nama = input("Nama pemesan: ")
         modul_tiket.pesan_tiket(kode, jumlah, nama)
 
-    elif pilihan == "4":
+    elif pilihan == "5":
         modul_tiket.tampilkan_riwayat()
 
-    elif pilihan == "5":
+    elif pilihan == "6":
         harga_list = [f["harga"] for f in modul_film.daftar_film.values()]
         print("Sebelum sorting:", harga_list)
         sorted_list = modul_util.bubble_sort(harga_list)
         print("Setelah sorting:", sorted_list)
 
-    elif pilihan == "6":
+    elif pilihan == "7":
         target = input("Masukkan kode film yang dicari: ")
         semua_kode = list(modul_film.daftar_film.keys())  
         idx = modul_util.linear_search(semua_kode, target)
@@ -53,7 +58,7 @@ while True:
             print("⚠️ Kode film tidak ditemukan!")
 
 
-    elif pilihan == "7":
+    elif pilihan == "8":
         print("Terima kasih, keluar dari sistem!")
         break
 

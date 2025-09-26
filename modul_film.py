@@ -31,3 +31,12 @@ def tampilkan_film():
 def tambah_film(kode, judul, harga):
     daftar_film[kode] = {"judul": judul, "harga": harga}
     simpan_film(daftar_film)
+
+def hapus_film(kode):
+    if kode in daftar_film:
+        judul = daftar_film[kode]["judul"]
+        del daftar_film[kode]
+        simpan_film(daftar_film)
+        print(f"🗑️ Film '{judul}' berhasil dihapus.")
+    else:
+        print("❌ Kode film tidak ditemukan.")
